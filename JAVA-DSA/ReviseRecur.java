@@ -1,14 +1,14 @@
-// WAP to print numbers 5 to 1 using Recursion
+// WAP to print numbers 1 to 5 using Recursion
 public class ReviseRecur {
     public static void Recursion(int n){
-        if(n<1){
+        if(n>5){
             return;
         }
         System.out.println(n);
-        Recursion(n-1);
+        Recursion(n+1);
 
     }
     public static void main(String[] args) {
-        Recursion(5);
+        Recursion(1);
     }
 }
