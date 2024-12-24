@@ -8,7 +8,7 @@ public class ReverseString {
     }
 
     public static void main(String[] args) {
-        String input = "hello"; 
+        String input = "GITHUB"; 
         String result = reverse(input);
         System.out.println("The reverse of \"" + input + "\" is: \"" + result + "\"");
     }
