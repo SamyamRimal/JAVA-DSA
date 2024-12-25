@@ -76,3 +76,20 @@ public class ToDoList {
             System.out.println("An error occurred while adding the task.");
         }
     }
+     // Method to remove a task
+     private static void removeTask(int taskNumber) {
+        List<String> tasks = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                tasks.add(line);
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file.");
+            return;
+        }
+
+        if (taskNumber < 1 || taskNumber > tasks.size()) {
+            System.out.println("Invalid task number.");
+            return;
+        }
