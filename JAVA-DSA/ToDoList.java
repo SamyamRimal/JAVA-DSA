@@ -47,3 +47,22 @@ public class ToDoList {
         }
         scanner.close();
     }
+    // Method to view tasks
+    private static void viewTasks() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(FILE_NAME))) {
+            String line;
+            int taskNumber = 1;
+            System.out.println("\n--- To-Do List ---");
+            while ((line = reader.readLine()) != null) {
+                System.out.println(taskNumber + ". " + line);
+                taskNumber++;
+            }
+            if (taskNumber == 1) {
+                System.out.println("Your to-do list is empty!");
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("No tasks found. Start by adding some tasks.");
+        } catch (IOException e) {
+            System.out.println("An error occurred while reading the file.");
+        }
+    }
