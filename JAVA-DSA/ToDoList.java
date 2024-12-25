@@ -66,3 +66,13 @@ public class ToDoList {
             System.out.println("An error occurred while reading the file.");
         }
     }
+    // Method to add a task
+    private static void addTask(String task) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME, true))) {
+            writer.write(task);
+            writer.newLine();
+            System.out.println("Task added successfully!");
+        } catch (IOException e) {
+            System.out.println("An error occurred while adding the task.");
+        }
+    }
