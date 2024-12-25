@@ -93,3 +93,26 @@ public class ToDoList {
             System.out.println("Invalid task number.");
             return;
         }
+        tasks.remove(taskNumber - 1);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
+            for (String task : tasks) {
+                writer.write(task);
+                writer.newLine();
+            }
+            System.out.println("Task removed successfully!");
+        } catch (IOException e) {
+            System.out.println("An error occurred while updating the file.");
+        }
+    }
+
+    // Method to clear all tasks
+    private static void clearTasks() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME))) {
+            // Writing nothing clears the file
+            System.out.println("All tasks cleared!");
+        } catch (IOException e) {
+            System.out.println("An error occurred while clearing the file.");
+        }
+    }
+}
