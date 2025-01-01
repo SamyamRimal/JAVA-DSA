@@ -23,6 +23,15 @@ public class MatrixRotation {
             }
         }
     }
+    // Method to display the matrix
+    public static void displayMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
