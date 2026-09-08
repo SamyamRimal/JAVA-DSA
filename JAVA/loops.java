@@ -1,8 +1,9 @@
 public class loops {
     public static void main(String[] args){
-        int i=0;
-        while (i<10){
-            System.out.println("Hello World!");
+        int i=1;
+        int n = 12;
+        while (i<=n){
+            System.out.println(i);
             i++;
         }
     }
